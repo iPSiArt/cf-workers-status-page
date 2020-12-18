@@ -1,6 +1,6 @@
 settings:
   title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
+  url: 'https://status.ipsi.workers.dev' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: false # experimental feature, enable only for <5 monitors or on paid plans
@@ -15,23 +15,44 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
+  - id: admin-robotikosakademija-lt # unique identifier
+    name: admin.robotikosakademija.lt
+    description: 'Admin panel for RA operations.' # default=empty
+    url: 'https://admin.robotikosakademija.lt/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
+    followRedirect: true # should fetch follow redirects, default=false
 
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
+  - id: www-robotikosakademija-lt
+    name: www.robotikosakademija.lt
+    description: 'Main RA site.'
+    url: 'https://robotikosakademija.lt'
     method: GET
     expectStatus: 200
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
+  - id: bureliai-robotikosakademija-lt
+    name: Būreliai RA
+    url: 'https://bureliai.robotikosakademija.lt/'
+    method: GET
+    expectStatus: 200
+
+  - id: stovyklos-robotikosakademija-lt
+    name: Stovyklos RA
+    url: 'https://stovyklos.robotikosakademija.lt/'
+    method: GET
+    expectStatus: 200
+
+  - id: admin-exoclass-com # unique identifier
+    name: admin.exoclass.com
+    description: 'Admin panel for UK operations.' # default=empty
+    url: 'https://admin.exoclass.com/' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: true # should fetch follow redirects, default=false
+
+  - id: www-clastory-com
+    name: www.clastory.com
+    description: 'Main UK site.'
+    url: 'https://clastory.com'
     method: GET
     expectStatus: 200
